@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bayina Rohit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 2rem 1rem;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #fff;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 32px rgba(30,60,114,0.35);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    h1 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 3rem;
+      margin: 0 0 0.5rem 0;
+      letter-spacing: 1px;
+      background: linear-gradient(45deg, #ffb300, #fffde4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #e0e8ff;
+      margin-bottom: 2rem;
+      background: rgba(30,60,114,0.25);
+      padding: 0.8rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(30,60,114,0.15);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .social-links a {
+      color: #fff;
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      filter: drop-shadow(0 2px 8px rgba(30,60,114,0.3));
+    }
+
+    .social-links a:hover {
+      color: #ffb300;
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0;
+      justify-content: center;
+    }
+
+    .nav-button {
+      padding: 0.8rem 2rem;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 2px 8px rgba(30,60,114,0.15);
+    }
+
+    .nav-button:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+      border-color: #ffb300;
+    }
+
+    .content-section {
+      padding: 2rem 1rem;
+      max-width: 600px;
+      width: 90%;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.5s ease;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #ffb300;
+      text-align: center;
+    }
+
+    .section-content {
+      line-height: 1.7;
+      color: #e0e8ff;
+    }
+
+    .interests-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .interest-card {
+      background: rgba(255,255,255,0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .interest-card:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-5px);
+      border-color: #ffb300;
+    }
+
+    .contact {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .contact-btn {
+      padding: 1rem 2.5rem;
+      border-radius: 24px;
+      background: linear-gradient(45deg, #ffb300, #fffde4);
+      color: #1e3c72;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      box-shadow: 0 2px 12px #ffb30044;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .contact-btn:hover {
+      background: linear-gradient(90deg, #fffde4 60%, #ffb300 100%);
+      transform: scale(1.07);
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-card">
+    <img src="rohit.jpg" alt="Bayina Rohit" class="avatar">
+    <h1>Bayina Rohit</h1>
+    <div class="tagline">Dreamer | Coder | Explorer</div>
+    <div class="icons">
+      <a href="https://instagram.com/bayinarohit" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/byinarohit" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/byinarohit" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:byinarohit@email.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="section">
+      <h2>About Me</h2>
+      <p>
+        Hi! I’m <strong>Bayina Rohit</strong>. I’m a person who loves to dream big and explore the beauty in everyday moments.
+      </p>
+      <p>
+        I’m passionate about <strong>coding</strong>, which lets me create and solve problems, but I also find joy in <strong>music</strong>, <strong>travel</strong>, <strong>capturing memories through photography</strong>, <strong>roaming on beaches</strong> since my home is near the beach, and <strong>discussing geopolitics</strong>.
+        Life to me is about learning, growing, and sharing meaningful experiences.
+      </p>
+      <p>
+        I’m very <strong>punctual</strong> and a <strong>morning person</strong>, always ready to start the day with energy and enthusiasm.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>What I Love</h2>
+      <ul>
+        <li>Strumming my guitar and losing myself in melodies</li>
+        <li>Experimenting with new recipes in the kitchen</li>
+        <li>Going on adventures to discover new places and stories</li>
+        <li>Spending peaceful mornings at the beach</li>
+        <li>Deep conversations about world events and politics</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Things I’m Proud Of</h2>
+      <ul>
+        <li>Making time for my family every day and cherishing our bond</li>
+        <li>Having a great perspective about myself and my role in my friends group</li>
+        <li>Building and maintaining a wonderful circle of friends</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>What I’m Looking For</h2>
+      <p>
+        I’m hoping to find someone who balances <strong>innocence and maturity</strong>—
+        someone who can be playful and curious about life while also being thoughtful and responsible.
+        I value honesty and a great sense of humor.
+      </p>
+      <p>
+        If you enjoy meaningful conversations, spontaneous adventures, and creating lasting memories,
+        I’d love to get to know you better.
+      </p>
+    </div>
+
+    <div class="contact">
+      <button class="contact-btn" onclick="window.location='mailto:bayinarohit271@gmail.com'">Contact Me</button>
+    </div>
+  </div>
+</body>
+</html>

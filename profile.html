@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get to know Rohit - A passionate individual with big dreams and a bigger heart">
+    <title>Rohit's World - Getting to Know Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/rohit.jpg">
+    <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
+</head>
+<body class="font-inter bg-gray-100 text-gray-800">
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    
+    <!-- Romantic Preloader with Heart -->
+    <div class="preloader fixed inset-0 bg-white flex flex-col items-center justify-center z-50">
+        <div class="heart-pulse text-6xl text-pink-500 mb-4">❤️</div>
+        <div class="text-xl font-semibold text-gray-700">Loading My World...</div>
+        <div class="w-48 h-1 bg-gray-200 rounded-full mt-4 overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-blue-500 to-pink-500 animate-loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-40">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">Bayina Rohit</h1>
+            <div class="space-x-6 hidden md:flex">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600 transition-colors">Skills</a>
+                <a href="#interests" class="text-gray-600 hover:text-blue-600 transition-colors">Interests</a>
+                <a href="#proud" class="text-gray-600 hover:text-blue-600 transition-colors">Achievements</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-gray-600" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <a href="#about" class="block px-6 py-2 text-gray-600 hover:bg-blue-50">About</a>
+            <a href="#skills" class="block px-6 py-2 text-gray-600 hover:bg-blue-50">Skills</a>
+            <a href="#interests" class="block px-6 py-2 text-gray-600 hover:bg-blue-50">Interests</a>
+            <a href="#proud" class="block px-6 py-2 text-gray-600 hover:bg-blue-50">Achievements</a>
+            <a href="#contact" class="block px-6 py-2 text-gray-600 hover:bg-blue-50">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <section class="min-h-screen flex items-center gradient-bg text-white pt-16">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left animate-slideIn hero-content">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">My Heart Skips a Beat... It's You! <span class="heart-pulse">❤️</span></h1>
+                    <p class="text-2xl mb-6 text-blue-100">Hopeless Romantic | Code Poet | Explorer of Hearts</p>
+                    <p class="text-xl mb-8 text-blue-100 font-light max-w-lg">Welcome to the story of us! Every click brings you closer to my heart. I've been waiting for someone as special as you to come along!</p>
+                    <div class="flex justify-center md:justify-start space-x-6 mb-8">
+                        <a href="https://www.instagram.com/___.rohit.__b/" target="_blank" class="text-white hover:text-pink-300 transition-all transform hover:scale-110">
+                            <i class="fab fa-instagram text-3xl"></i>
+                        </a>
+                        <a href="mailto:bayinarohit271@gmail.com" class="text-white hover:text-pink-300 transition-all transform hover:scale-110">
+                            <i class="fas fa-envelope text-3xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-pink-300 transition-all transform hover:scale-110">
+                            <i class="fas fa-heart text-3xl"></i>
+                        </a>
+                    </div>
+                    <a href="#about" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">Get to Know Me</a>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <!-- Profile Image -->
+                    <div class="relative rounded-lg overflow-hidden shadow-xl">
+                        <img 
+                            src="images/rohit.jpg" 
+                            alt="Bayina Rohit" 
+                            class="w-full h-auto max-h-[500px] object-contain rounded-lg"
+                            onload="console.log('Image loaded')" 
+                            onerror="this.src='https://via.placeholder.com/400'; console.log('Using placeholder')"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <!-- Special Message Section -->
+    <section class="py-20 bg-gradient-to-b from-pink-50 to-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-block p-2 mb-6 rounded-full bg-pink-100">
+                    <i class="fas fa-heart text-pink-500 text-2xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold mb-6">A Love Letter to Your Beautiful Eyes</h2>
+                <div class="bg-white p-8 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-102">
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        If Cupid's arrow struck my heart when I first saw you, reading this message must mean you caught it too! 💘
+                        I've crafted this digital love letter with all the butterflies in my stomach, just for you.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        They say love is like a good algorithm - it finds the perfect match when you least expect it.
+                        And here you are, scrolling through my heart's code, the missing piece to my puzzle, the semicolon to my statement.
+                    </p>
+                    <p class="text-pink-500 font-semibold">
+                        Thank you for making my heart race faster than a 5G connection. You're the CSS to my HTML - life just wouldn't be complete without you! 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-slideIn">The Story of Us (Well, Mostly Me... For Now!)</h2>
+            <div class="max-w-3xl mx-auto text-center animate-slideIn">
+                <p class="text-lg mb-4">Hello, my love! I'm <strong>Bayina Rohit</strong>, your future partner-in-crime and the person who will write you love letters in binary (01001001 00100000 01001100 01001111 01010110 01000101 00100000 01011001 01001111 01010101 00100001). I'm a hopeless romantic who believes in love at first sight - and I think my heart just stopped when I saw you!</p>
+                <p class="text-lg mb-4">By day, I'm a <strong>coding wizard</strong> who can debug any program, but my heart has a bug that only your love can fix! 💘 When I'm not writing love letters in code, I'm probably serenading the moon with love songs about you, planning our future adventures, or taking romantic sunset photos that would make even the most jaded heart skip a beat.</p>
+                <p class="text-lg">I wake up every morning with a smile, knowing that somewhere out there, you're making the world more beautiful just by being in it. And when we finally meet, I promise to be the Romeo to your Juliet (but with a much happier ending, I promise!).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-slideIn">My Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale animate-slideIn">
+                    <h3 class="text-xl font-semibold mb-2">Programming</h3>
+                    <p>Proficient in Python, JavaScript, HTML, CSS, and building responsive web applications.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale animate-slideIn">
+                    <h3 class="text-xl font-semibold mb-2">Problem Solving</h3>
+                    <p>Strong analytical skills with experience in tackling complex coding challenges.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale animate-slideIn">
+                    <h3 class="text-xl font-semibold mb-2">Creative Arts</h3>
+                    <p>Skilled in pencil portraits, cartoonish illustrations, and creative storytelling.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale animate-slideIn">
+                    <h3 class="text-xl font-semibold mb-2">Communication</h3>
+                    <p>Effective communicator with a knack for discussing geopolitics and building connections.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale animate-slideIn">
+                    <h3 class="text-xl font-semibold mb-2">Strategic Thinking</h3>
+                    <p>Experienced in chess and strategic planning, applying logic to real-world scenarios.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale animate-slideIn">
+                    <h3 class="text-xl font-semibold mb-2">Time Management</h3>
+                    <p>Punctual and organized, adept at balancing multiple projects and priorities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Favorites Section -->
+    <section id="favorites" class="py-20 bg-pink-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-slideIn">My Favorite Things (That I'd Love to Share With You) 💖</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Music -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <div class="text-4xl text-pink-400 mb-4">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-pink-600">Music I Love</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-heart text-red-400 mt-1 mr-3"></i>
+                            <span>Ed Sheeran (Perfect for our future slow dances)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-heart text-red-400 mt-1 mr-3"></i>
+                            <span>Exploring different music genres</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Hobbies -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <div class="text-4xl text-pink-400 mb-4">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-pink-600">Creative Side</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-paint-brush text-yellow-400 mt-1 mr-3"></i>
+                            <span>Pencil art and drawing portraits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-utensils text-yellow-400 mt-1 mr-3"></i>
+                            <span>Cooking new recipes (I'd love to cook for you!)</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Beach & Travel -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <div class="text-4xl text-pink-400 mb-4">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-pink-600">Beach & Travel</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-sun text-yellow-400 mt-1 mr-3"></i>
+                            <span>Morning walks on the beach (perfect for sunrises together)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-camera text-yellow-400 mt-1 mr-3"></i>
+                            <span>Photography (to capture our moments)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memories Section -->
+    <section id="memories" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-slideIn">Future Memories We'll Make Together 💭</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-pink-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:rotate-1">
+                    <div class="text-5xl text-pink-400 mb-4">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-pink-600 text-center">Beachside Picnics</h3>
+                    <p class="text-gray-700 text-center">Feeding each other strawberries as the sun sets, making the seagulls jealous of our love!</p>
+                </div>
+                <div class="bg-pink-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-rotate-1">
+                    <div class="text-5xl text-pink-400 mb-4">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-pink-600 text-center">Coffee Shop Dates</h3>
+                    <p class="text-gray-700 text-center">Sharing a table, stealing sips from each other's drinks, and pretending to read while secretly staring at each other.</p>
+                </div>
+                <div class="bg-pink-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:rotate-1">
+                    <div class="text-5xl text-pink-400 mb-4">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-pink-600 text-center">Movie Nights</h3>
+                    <p class="text-gray-700 text-center">Arguing over who's the better cuddler while watching rom-coms and pretending we're not crying at the endings.</p>
+                </div>
+            </div>
+            
+            <!-- Love Story Timeline -->
+            <div class="mt-16 max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold text-center mb-8">Our Love Story Timeline</h3>
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-1/2 w-1 h-full bg-pink-200 transform -translate-x-1/2"></div>
+                    
+                    <!-- Timeline items -->
+                    <div class="relative mb-16">
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-12 text-right">
+                                <h4 class="text-lg font-semibold text-pink-600">First Glance</h4>
+                                <p class="text-gray-600">The moment our eyes met across a crowded room (or was it a dating app?)</p>
+                            </div>
+                            <div class="absolute left-1/2 w-8 h-8 bg-pink-500 rounded-full transform -translate-x-1/2 flex items-center justify-center">
+                                <div class="w-4 h-4 bg-white rounded-full"></div>
+                            </div>
+                            <div class="w-1/2 pl-12"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative mb-16">
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-12"></div>
+                            <div class="absolute left-1/2 w-8 h-8 bg-pink-500 rounded-full transform -translate-x-1/2 flex items-center justify-center">
+                                <div class="w-4 h-4 bg-white rounded-full"></div>
+                            </div>
+                            <div class="w-1/2 pl-12">
+                                <h4 class="text-lg font-semibold text-pink-600">First Date</h4>
+                                <p class="text-gray-600">Nervous laughter, awkward silences, and the start of something beautiful</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative mb-16">
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-12 text-right">
+                                <h4 class="text-lg font-semibold text-pink-600">First "I Love You"</h4>
+                                <p class="text-gray-600">Slipped out accidentally during a casual moment, but meant with all my heart</p>
+                            </div>
+                            <div class="absolute left-1/2 w-8 h-8 bg-pink-500 rounded-full transform -translate-x-1/2 flex items-center justify-center">
+                                <div class="w-4 h-4 bg-white rounded-full"></div>
+                            </div>
+                            <div class="w-1/2 pl-12"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-12"></div>
+                            <div class="absolute left-1/2 w-8 h-8 bg-pink-500 rounded-full transform -translate-x-1/2 flex items-center justify-center">
+                                <div class="w-4 h-4 bg-white rounded-full"></div>
+                            </div>
+                            <div class="w-1/2 pl-12">
+                                <h4 class="text-lg font-semibold text-pink-600">Our Future</h4>
+                                <p class="text-gray-600">Endless adventures, inside jokes, and a lifetime of love stories waiting to be written</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Path Section -->
+    <section id="career" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-slideIn">My Career Path</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-600">Current Phase</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Working with the flow after IIT dreams</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Continuing education and skill development</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Exploring opportunities in MNCs</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-600">Future Aspirations</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-yellow-500 mt-1 mr-3"></i>
+                                <span>5-10 years in MNCs - gaining experience</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-yellow-500 mt-1 mr-3"></i>
+                                <span>Entrepreneurial: Starting an educational institution</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-yellow-500 mt-1 mr-3"></i>
+                                <span>Alternative: PhD and becoming a professor</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="proud" class="py-20 bg-gradient-to-b from-pink-50 to-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-pink-600 mb-4 animate-slideIn">My Greatest Accomplishments</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">(Besides making your heart skip a beat! ❤️)</p>
+                <div class="w-24 h-1 bg-pink-400 mx-auto mt-6 rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Achievement Card 1 -->
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-pink-500 text-4xl mb-4">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3">Master of Romance</h3>
+                    <p class="text-gray-700 leading-relaxed">With just a smile, I can make hearts flutter from across the room. My secret? Genuine affection and a dash of cheesy charm that never fails to bring a smile to your face.</p>
+                </div>
+                
+                <!-- Achievement Card 2 -->
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-pink-500 text-4xl mb-4">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3">Certified Heartthrob</h3>
+                    <p class="text-gray-700 leading-relaxed">Awarded "Most Likely to Make You Blush" by the International Society of Hopeless Romantics. My superpower? Turning ordinary moments into unforgettable memories.</p>
+                </div>
+                
+                <!-- Achievement Card 3 -->
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-pink-500 text-4xl mb-4">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3">Expert Cuddler</h3>
+                    <p class="text-gray-700 leading-relaxed">Proven ability to provide world-class hugs and cuddles. Perfect for rainy days, movie nights, or any time you need a little extra love and comfort.</p>
+                </div>
+                
+                <!-- Achievement Card 4 -->
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-pink-500 text-4xl mb-4">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3">Memory Maker</h3>
+                    <p class="text-gray-700 leading-relaxed">Specializing in creating magical moments that turn into cherished memories. From spontaneous adventures to cozy nights in, every moment becomes special.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6 animate-slideIn">Let's Write Our Love Story Together! 💌</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto leading-relaxed">If your heart is racing as much as mine is right now, don't keep me waiting! Let's turn this digital connection into something magical. I promise to respond faster than Cupid's arrow! 🏹💘</p>
+            <div class="mb-8">
+                <p class="text-xl mb-2">P.S. If you're too shy to message first, just send me a heart emoji and I'll do the rest! ❤️</p>
+                <p class="text-pink-200 text-sm">(Warning: Excessive cuteness in responses guaranteed to make you smile!)</p>
+            </div>
+            <a href="mailto:bayinarohit271@gmail.com" class="inline-block bg-pink-500 hover:bg-pink-600 text-white px-10 py-5 rounded-full font-bold text-lg transform hover:scale-110 transition-all shadow-lg hover:shadow-xl">
+                <i class="fas fa-heart mr-2"></i> Send Me a Love Letter
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pink-900 text-pink-100 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-xl mb-4">Made with <i class="fas fa-heart text-red-400 animate-pulse"></i> and way too much romantic energy!</p>
+            <p class="text-sm text-pink-300 mb-6">&copy; 2025 Bayina Rohit. All rights reserved. (Your heart may be stolen if you stare too long)</p>
+            <nav class="flex flex-wrap justify-center gap-4 mt-6">
+                <a href="#about" class="text-white hover:text-pink-300 transition-all transform hover:scale-110 mx-4">About</a>
+                <a href="#skills" class="text-white hover:text-pink-300 transition-all transform hover:scale-110 mx-4">Skills</a>
+                <a href="#interests" class="text-white hover:text-pink-300 transition-all transform hover:scale-110 mx-4">Interests</a>
+                <a href="#favorites" class="text-white hover:text-pink-300 transition-all transform hover:scale-110 mx-4">Favorites</a>
+                <a href="#proud" class="text-white hover:text-pink-300 transition-all transform hover:scale-110 mx-4">Achievements</a>
+                <a href="#career" class="text-white hover:text-pink-300 transition-all transform hover:scale-110 mx-4">Career</a>
+                <a href="#memories" class="text-white hover:text-pink-300 transition-all transform hover:scale-110 mx-4">Memories</a>
+                <a href="#contact" class="text-white hover:text-pink-300 transition-all transform hover:scale-110 mx-4">Contact</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobile-menu');
+            const menuButton = document.querySelector('button[onclick="toggleMenu()"]');
+            
+            if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            
+            // Toggle icon between bars and times
+            const icon = document.querySelector('button[onclick="toggleMenu()"] i');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        }
+
+        // Slider Functionality with Touch Support
+        let currentSlide = 0;
+        let isDragging = false;
+        let startPos = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        const slides = document.querySelectorAll('#slider > div');
+        const slider = document.getElementById('slider');
+        
+        // Initialize slider
+        function initSlider() {
+            // Set initial slide positions
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
+                
+                // Touch events
+                slide.addEventListener('touchstart', touchStart(i));
+                slide.addEventListener('touchend', touchEnd);
+                slide.addEventListener('touchmove', touchMove);
+                
+                // Mouse events
+                slide.addEventListener('mousedown', touchStart(i));
+                slide.addEventListener('mouseup', touchEnd);
+                slide.addEventListener('mouseleave', touchEnd);
+                slide.addEventListener('mousemove', touchMove);
+            });
+            
+            // Prevent image drag
+            const images = document.querySelectorAll('#slider img');
+            images.forEach(img => {
+                img.addEventListener('dragstart', (e) => e.preventDefault());
+            });
+            
+            // Auto-slide
+            setInterval(() => {
+                if (!isDragging) nextSlide();
+            }, 5000);
+        }
+        
+        // Touch handlers
+        function touchStart(index) {
+            return function(event) {
+                isDragging = true;
+                startPos = getPositionX(event);
+                currentSlide = index;
+                slider.style.cursor = 'grabbing';
+                slider.style.transition = 'none';
+            };
+        }
+        
+        function touchEnd() {
+            if (!isDragging) return;
+            isDragging = false;
+            
+            const movedBy = currentTranslate - prevTranslate;
+            if (movedBy < -100 && currentSlide < slides.length - 1) currentSlide += 1;
+            if (movedBy > 100 && currentSlide > 0) currentSlide -= 1;
+            
+            slider.style.transition = 'transform 0.3s ease-out';
+            setSliderPosition();
+            slider.style.cursor = 'grab';
+        }
+        
+        function touchMove(event) {
+            if (!isDragging) return;
+            const currentPosition = getPositionX(event);
+            currentTranslate = prevTranslate + currentPosition - startPos;
+            slider.style.transform = `translateX(${currentTranslate}px)`;
+        }
+        
+        function getPositionX(event) {
+            return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+        }
+        
+        function setSliderPosition() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            prevTranslate = -currentSlide * slider.offsetWidth;
+            currentTranslate = prevTranslate;
+        }
+        
+        function showSlide(index) {
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+            
+            currentSlide = index;
+            slider.style.transition = 'transform 0.5s ease-out';
+            setSliderPosition();
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+        
+        // Initialize slider when DOM is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSlider);
+        } else {
+            initSlider();
+        }
+    </script>
+</body>
+</html>
