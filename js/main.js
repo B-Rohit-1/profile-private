@@ -180,59 +180,28 @@ window.addEventListener('DOMContentLoaded', () => {
         }, 1500);
     }
 
-    // Animate elements on scroll with Intersection Observer
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    // Animate sections on scroll with Intersection Observer
     const animatedSections = document.querySelectorAll('section');
     
-    // Combined observer for both elements and sections
-    const scrollObserver = (entries, observer) => {
+    const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // For animate-on-scroll elements
-                if (entry.target.classList.contains('animate-on-scroll')) {
-                    // Debug: log when an animate-on-scroll element is triggered
-                    console.log('Animating:', entry.target, entry.target.getAttribute('data-animate'));
-                    // Add a small delay based on data-delay attribute
-                    const delay = entry.target.getAttribute('data-delay') || 0;
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                        // Debug: log after class is added
-                        console.log('Visible class added:', entry.target);
-                    }, parseInt(delay));
-                }
-                // For section animations
-                if (entry.target.tagName === 'SECTION') {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    entry.target.style.visibility = 'visible';
-                }
-                
-                // Unobserve after animation starts to improve performance
-                observer.unobserve(entry.target);
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                entry.target.style.visibility = 'visible';
             }
         });
-    };
-
-    // Create a single observer instance with options
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -20px 0px'  // Slight adjustment for better timing
-    };
+    }, { threshold: 0.1 });
     
-    const observer = new IntersectionObserver(scrollObserver, observerOptions);
-
-    // Set initial styles and observe elements
+    // Set initial styles and observe each section
     animatedSections.forEach((section, index) => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(30px)';
         section.style.transition = 'all 0.8s ease-out';
         section.style.transitionDelay = `${index * 0.1}s`;
         section.style.visibility = 'hidden';
-        observer.observe(section);
+        sectionObserver.observe(section);
     });
-    
-    // Observe all animated elements
-    animatedElements.forEach(element => observer.observe(element));
     
     // Special animation for the first section
     const firstSection = document.querySelector('section:first-of-type');
@@ -242,81 +211,96 @@ window.addEventListener('DOMContentLoaded', () => {
         firstSection.style.visibility = 'visible';
     }
 
-    // Staggered animations for cards and items
-    const animatedItems = document.querySelectorAll('.interest-card, .favorite-item, .memory-item, .goal-item');
-    
-    // Set initial styles for animated items
-    animatedItems.forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = `all 0.5s ease ${index * 0.1}s`;
-    });
-    
-    const itemObserver = new IntersectionObserver((entries) => {
+    // Scroll-triggered staggered animations
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                const section = entry.target;
+                const items = section.querySelectorAll('.interest-card, .favorite-item, .memory-item, .goal-item');
+                
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -20px 0px'
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+        
+        // Initial opacity and transform
+        const items = section.querySelectorAll('.interest-card, .favorite-item, .memory-item, .goal-item');
+        items.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'all 0.5s ease';
+        });
     });
-    
-    // Observe all animated items
-    animatedItems.forEach(item => itemObserver.observe(item));
-    
+
     // Add loading animation to avatar
     const avatar = document.querySelector('.avatar');
     if (avatar) {
-        avatar.style.opacity = '0';
-        avatar.style.transform = 'scale(0.8)';
-        
-        // If image is already loaded
-        if (avatar.complete) {
-            setTimeout(() => {
-                avatar.style.transition = 'all 0.8s ease-out';
-                avatar.style.opacity = '1';
-                avatar.style.transform = 'scale(1)';
-            }, 100);
-        } else {
-            // Wait for image to load
-            avatar.addEventListener('load', () => {
-                setTimeout(() => {
-                    avatar.style.transition = 'all 0.8s ease-out';
-                    avatar.style.opacity = '1';
-                    avatar.style.transform = 'scale(1)';
-                }, 100);
-            });
-        }
+      avatar.style.opacity = '0';
+      avatar.style.transform = 'scale(0.8)';
+      
+      // Wait for image to load
+      avatar.addEventListener('load', () => {
+        avatar.style.transition = 'all 0.8s ease-out';
+        avatar.style.opacity = '1';
+        avatar.style.transform = 'scale(1)';
+      });
     }
 
     // Add hover effect to section titles
-    const sectionTitles = document.querySelectorAll('h2, h3, .section-title');
+    const sectionTitles = document.querySelectorAll('.section-title');
     sectionTitles.forEach(title => {
-        title.style.transition = 'all 0.3s ease';
-        title.addEventListener('mouseenter', (e) => {
-            e.target.style.transform = 'scale(1.02)';
-            e.target.style.color = e.target.style.color || '';
-        });
-        title.addEventListener('mouseleave', (e) => {
-            e.target.style.transform = 'scale(1)';
-            e.target.style.color = '';
-        });
+      title.addEventListener('mouseenter', () => {
+        title.style.transform = 'scale(1.05)';
+        title.style.color = '#ffb300';
+      });
+      title.addEventListener('mouseleave', () => {
+        title.style.transform = 'scale(1)';
+        title.style.color = '#ffb300';
+      });
     });
+});
+  
+  // Wait for image to load
+  avatar.addEventListener('load', () => {
+    avatar.style.transition = 'all 0.8s ease-out';
+    avatar.style.opacity = '1';
+    avatar.style.transform = 'scale(1)';
+  });
+}
 
-    // Add parallax effect to background
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const header = document.querySelector('.hero');
-        if (header) {
-            header.style.backgroundPositionY = `${scrolled * 0.5}px`;
-        }
-    });
+// Add parallax effect to background
+window.addEventListener('scroll', () => {
+  const scrolled = window.pageYOffset;
+  const header = document.querySelector('.hero');
+  if (header) {
+    header.style.backgroundPositionY = `${scrolled * 0.5}px`;
+  }
+});
 
-    // Initialize any other animations or event listeners here
-    console.log('All animations and event listeners initialized');
+// Add hover effect to section titles
+const sectionTitles = document.querySelectorAll('.section-title');
+sectionTitles.forEach(title => {
+  title.addEventListener('mouseenter', () => {
+    title.style.transform = 'scale(1.05)';
+    title.style.color = '#ffb300';
+  });
+  title.addEventListener('mouseleave', () => {
+    title.style.transform = 'scale(1)';
+    title.style.color = '#ffb300';
+  });
 });
 
 // Add particle effect on click
